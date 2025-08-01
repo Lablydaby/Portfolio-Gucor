@@ -1,7 +1,7 @@
 import React from 'react';
 
 const About: React.FC = () => (
-  <section id="about" className="py-32 sm:py-16 bg-white relative overflow-hidden" style={{ fontFamily: 'Comfortaa, cursive' }}>
+  <section id="about" className="py-32 sm:py-16 relative overflow-hidden" style={{ fontFamily: 'Quicksand, sans-serif', backgroundColor: 'transparent', color: '#fff' }}>
     {/* Multiple Scattered Gray Blobs Background */}
     <div className="absolute inset-0 -z-10">
       <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -16,7 +16,7 @@ const About: React.FC = () => (
           </linearGradient>
         </defs>
 
-        {/* Blob 1 - Upper Left Corner (Aesthetic Organic Shape) */}
+        Blob 1 - Upper Left Corner (Aesthetic Organic Shape)
         <path fill="url(#blob1)" fillOpacity="0.08" d="M-220,100Q-165,45,-110,150Q-55,255,0,110Q55,-35,110,130Q165,295,220,90Q165,-15,110,170Q55,355,0,190Q-55,25,-110,210Q-165,395,-220,150Q-165,5,-220,100Z">
           <animate attributeName="d" dur="8s" repeatCount="indefinite"
             values="M-220,100Q-165,45,-110,150Q-55,255,0,110Q55,-35,110,130Q165,295,220,90Q165,-15,110,170Q55,355,0,190Q-55,25,-110,210Q-165,395,-220,150Q-165,5,-220,100Z;
@@ -36,8 +36,10 @@ const About: React.FC = () => (
 
     <div className="relative z-10 max-w-6xl mx-auto px-6">
       <div className="flex flex-col items-center mb-20">
-        <h2 className="section-title">
-          <span className="title-highlight">A</span>BOUT
+        <h2 className="section-title" style={{ color: '#fff'}}>
+          <strong>
+            <span className="title-highlight">A</span>BOUT
+          </strong>
         </h2>
       </div>
 
@@ -45,61 +47,61 @@ const About: React.FC = () => (
         {/* Left Column - Text Content */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-4">
+            <h3 className="text-2xl font-medium text-white tracking-wide mb-4">
               The Artist Behind the Code
             </h3>
-            <p className="about-description text-lg text-stone-600 leading-relaxed font-light">
-              I’m a developer with a strong eye for design and a passion for creating digital experiences that are both functional and visually engaging. I approach every project with intention—writing clean code, designing intuitive interfaces, and ensuring every detail contributes to a smooth user experience.
+            <p className="about-description text-lg text-white leading-relaxed font-light">
+            I’m a developer and designer with over 5 years of experience in graphic design and UI/UX. With a strong eye for aesthetics and a deep understanding of user behavior, I craft digital experiences that are as intuitive as they are impactful. I bridge the gap between form and function—ensuring every pixel has purpose and every line of code enhances the user journey.
             </p>
           </div>
 
           <div>
-            <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-4">
-              Philosophy
+            <h3 className="text-2xl font-medium text-white tracking-wide mb-4">
+              Design Philosophy
             </h3>
-            <p className="about-description text-lg text-stone-600 leading-relaxed font-light">
-              I believe effective digital products come from the right mix of technical skill and user-centered design. My goal is always to build solutions that not only work well but also feel right to the people using them.
+            <p className="about-description text-lg text-white leading-relaxed font-light">
+            I approach every project with intention: understanding the challenge, the users, and the desired outcome. From there, I follow an iterative, human-centered process—blending design thinking, clean development, and continuous collaboration. Every step is about refining ideas, testing solutions, and ensuring the final product is aligned, intuitive, and deeply usable.
             </p>
           </div>
 
           <div>
-            <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-4">
+            <h3 className="text-2xl font-medium text-white tracking-wide mb-4">
               Approach
             </h3>
-            <p className="about-description text-lg text-stone-600 leading-relaxed font-light">
+            <p className="about-description text-lg text-white leading-relaxed font-light">
               I start every project by understanding the problem, the users, and the goals. From there, I follow an iterative design and development process—collaborating closely with clients, testing ideas early, and refining based on feedback to ensure the final product is aligned, usable, and meaningful.
             </p>
           </div>
 
           {/* Signature */}
           <div className="mt-10">
-            <span className="block text-3xl font-signature text-stone-700 tracking-widest">— Nikka Joie</span>
+            <span className="block text-3xl font-signature text-white tracking-widest">— Lovely</span>
           </div>
         </div>
 
         {/* Right Column - Skills with Animated Icons */}
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-8 text-center">
+            <h3 className="text-2xl font-medium text-white tracking-wide mb-8 text-center">
               Technical palette
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col items-center p-6 border border-stone-200 hover:border-blue-400 transition-colors duration-300 rounded-xl hover:scale-105 transform-gpu relative">
                 <span className="text-4xl mb-2 animate-bounce">💻</span>
-                <div className="text-xl font-light text-stone-800 mb-1">Frontend</div>
-                <div className="text-sm text-stone-600 font-light mb-6">React, Vue, TypeScript, Tailwind CSS, JavaScript, HTML, CSS</div>
+                <div className="text-xl font-light text-white mb-1">Frontend</div>
+                <div className="text-sm text-white font-light mb-6">React, Vue, TypeScript, Tailwind CSS, JavaScript, HTML, CSS</div>
                 <div className="w-32 h-px bg-stone-400 absolute bottom-4"></div>
               </div>
               <div className="flex flex-col items-center p-6 border border-stone-200 hover:border-pink-400 transition-colors duration-300 rounded-xl hover:scale-105 transform-gpu relative">
                 <span className="text-4xl mb-2 animate-pulse">🎨</span>
-                <div className="text-xl font-light text-stone-800 mb-1">Design</div>
-                <div className="text-sm text-stone-600 font-light mb-6">UI/UX, Prototyping, Mockups</div>
+                <div className="text-xl font-light text-white mb-1">Design</div>
+                <div className="text-sm text-white font-light mb-6">UI/UX, Prototyping, Mockups</div>
                 <div className="w-32 h-px bg-stone-400 absolute bottom-4"></div>
               </div>
               <div className="flex flex-col items-center p-6 border border-stone-200 hover:border-yellow-400 transition-colors duration-300 rounded-xl hover:scale-105 transform-gpu relative">
                 <span className="text-4xl mb-2 animate-wiggle">☁️</span>
-                <div className="text-xl font-light text-stone-800 mb-1">Tools</div>
-                <div className="text-sm text-stone-600 font-light mb-6">Figma, Github, Canva</div>
+                <div className="text-xl font-light text-white mb-1">Tools</div>
+                <div className="text-sm text-white font-light mb-6">Figma, Adobe Suite, Github, Canva</div>
                 <div className="w-32 h-px bg-stone-400 absolute bottom-4"></div>
               </div>
             </div>

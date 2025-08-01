@@ -15,23 +15,25 @@ const Hero: React.FC = () => {
 
   // More scattered, lively arrangement for 9 squares
   const squares = [
-    { top: '4%', left: '12%', size: '5.5rem', border: 5, color: '#3B82F6', opacity: 0.18, zIndex: 0, spinFactor: 0.7 },
-    { top: '16%', right: '8%', size: '6.2rem', border: 5, color: '#8B5CF6', opacity: 0.16, zIndex: 0, spinFactor: -0.5 },
-    { top: '28%', left: '22%', size: '5.1rem', border: 5, color: '#10B981', opacity: 0.17, zIndex: 0, spinFactor: 1.1 },
-    { top: '44%', right: '14%', size: '5.7rem', border: 5, color: '#F59E42', opacity: 0.15, zIndex: 0, spinFactor: -0.9 },
-    { top: '60%', left: '38%', size: '6.8rem', border: 5, color: '#EC4899', opacity: 0.10, zIndex: 0, spinFactor: 0.4 },
-    { bottom: '22%', left: '10%', size: '5.4rem', border: 5, color: '#FACC15', opacity: 0.14, zIndex: 0, spinFactor: 0.6 },
-    { bottom: '8%', right: '18%', size: '5.6rem', border: 5, color: '#14B8A6', opacity: 0.15, zIndex: 0, spinFactor: -0.8 },
-    { bottom: '14%', left: '58%', size: '4.8rem', border: 5, color: '#EF4444', opacity: 0.13, zIndex: 0, spinFactor: 1.2 },
-    { bottom: '32%', right: '6%', size: '6.1rem', border: 5, color: '#6366F1', opacity: 0.13, zIndex: 0, spinFactor: -1.1 },
+    { top: '4%', left: '8%', size: '6rem', border: 4, color: '#FD6F00', opacity: 0.08, zIndex: 0, spinFactor: 0.5 },
+    { top: '12%', right: '5%', size: '5rem', border: 4, color: '#FF8C42', opacity: 0.07, zIndex: 0, spinFactor: -0.3 },
+    { top: '22%', left: '12%', size: '5.5rem', border: 4, color: '#FFD580', opacity: 0.1, zIndex: 0, spinFactor: 0.4 },
+    { top: '30%', right: '10%', size: '6.5rem', border: 4, color: '#FFB347', opacity: 0.09, zIndex: 0, spinFactor: -0.6 },
+    { top: '40%', left: '6%', size: '5.2rem', border: 4, color: '#FD6F00', opacity: 0.1, zIndex: 0, spinFactor: 0.2 },
+    { bottom: '40%', right: '12%', size: '5.8rem', border: 4, color: '#FF6F00', opacity: 0.08, zIndex: 0, spinFactor: -0.5 },
+    { bottom: '32%', left: '15%', size: '6.2rem', border: 4, color: '#FF8C42', opacity: 0.09, zIndex: 0, spinFactor: 0.3 },
+    { bottom: '24%', right: '8%', size: '5rem', border: 4, color: '#FFD580', opacity: 0.07, zIndex: 0, spinFactor: -0.4 },
+    { bottom: '15%', left: '10%', size: '5.4rem', border: 4, color: '#FFB347', opacity: 0.1, zIndex: 0, spinFactor: 0.6 },
+    { bottom: '6%', right: '6%', size: '6rem', border: 4, color: '#FD6F00', opacity: 0.08, zIndex: 0, spinFactor: -0.2 },
   ];
+  
 
   // Calculate transforms for shapes
   const spin = (factor: number) => `rotate(${scrollY * factor}deg)`;
   const bounce = (factor: number, offset: number = 0) => `translateY(${Math.sin((scrollY + offset) * 0.02) * factor}px)`;
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden" style={{ fontFamily: 'Comfortaa, cursive' }}>
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden" style={{ fontFamily: 'Quicksand, sans-serif' }}>
       {/* Abstract Animated Squares - Randomly Scattered */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {squares.map((sq, i) => (
@@ -59,20 +61,28 @@ const Hero: React.FC = () => {
         ))}
       </div>
       {/* Main Content */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-light text-stone-600 tracking-wide mb-6 hero-title" style={{ fontFamily: 'Comfortaa, cursive' }}>
-          NIKKA MENDOZA
-        </h2>
-        <p className="text-lg md:text-xl text-stone-600 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-          A curated collection of digital experiences, creative solutions, and innovative designs that showcase the intersection of art and technology.
+
+      <div className="relative z-10 max-w-5xl mx-auto">
+      <h2
+        className="text-5xl md:text-6xl font-medium tracking-wide mb-1 hero-title"
+        style={{
+          fontFamily: 'Quicksand, sans-serif',
+          fontWeight: '450'
+        }}
+      >
+        LOVELY SHANE C. GUCOR
+      </h2>
+      
+        <p className="text-lg md:text-xl text-white mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+          Where form meets function — a collection of digital designs crafted with purpose, beauty, and precision.
         </p>
-        
+
         <div className="flex justify-center items-center">
           <a 
             href="#projects" 
-            className="curtain-btn group px-8 py-4 bg-stone-800 text-white font-light tracking-wide text-sm hover:bg-stone-100 hover:text-stone-800 border-2 border-stone-800 transition-all duration-500 flex items-center justify-center"
+            className="curtain-btn group px-8 py-4" style={{ backgroundColor: '#FD6F00', color: '#fff', border: '2px solid #FD6F00', fontWeight: 300, letterSpacing: '0.05em', fontSize: '1rem', transition: 'all 0.5s', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            <span>EXPLORE GALLERY</span>
+            <span className='font-bold'>EXPLORE GALLERY</span>
             <svg className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14m-7-7l7 7-7 7"></path>
             </svg>

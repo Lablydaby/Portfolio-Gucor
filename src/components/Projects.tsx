@@ -1,50 +1,61 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Project thumbnails
-import phishermenImage from '../imgs/phishermen.png';
-import ratatutorImage from '../imgs/ratatutor.png';
-import pathfinderImage from '../imgs/pathfinder.png';
-import pennywaiseImage from '../imgs/pennywaise.png';
-import exerguideImage from '../imgs/exerguide.png';
-import secondlifeImage from '../imgs/2ndlife.png';
-import sisiwImage from '../imgs/sisiw.png';
+import simplyfiImage from '../imgs/simplyfi.png';
+import aiImage from '../imgs/ai.png';
+import pathfinderImage from '../imgs/pathviz.png';
+import blogImage from '../imgs/blog.png';
+import datastructarImage from '../imgs/datastructar.jpg';
+import babyImage from '../imgs/baby.png';
+import baby1 from '../imgs/baby1.png';
 import honeyImage from '../imgs/honey.png';
 import uppaImage from '../imgs/uppa.png';
+import gameImage from '../imgs/game.png';
+import smImage from '../imgs/sm.png';
+import lechownImage from '../imgs/lechown.png';
+import logoImage from '../imgs/logo.png';
 
 // Project gallery images
-import phisher1 from '../imgs/phisher1.png';
-import phisher2 from '../imgs/phisher2.png';
-import phisher3 from '../imgs/phisher3.png';
-import rata1 from '../imgs/rata1.png';
-import rata2 from '../imgs/rata2.png';
-import rata3 from '../imgs/rata3.png';
-import rata4 from '../imgs/rata4.png';
-import rata5 from '../imgs/rata5.png';
-import path1 from '../imgs/path1.png';
-import path2 from '../imgs/path2.png';
-import path3 from '../imgs/path3.png';
-import penny1 from '../imgs/penny1.png';
-import penny2 from '../imgs/penny2.png';
-import penny3 from '../imgs/penny3.png';
-import penny4 from '../imgs/penny4.png';
-import penny5 from '../imgs/penny5.png';
-import second1 from '../imgs/2nd1.png';
-import second2 from '../imgs/2nd2.png';
-import second3 from '../imgs/2nd3.png';
-import sisiw1 from '../imgs/sisiw1.png';
+import blog1 from '../imgs/blog1.png';
+import blog2 from '../imgs/blog2.png';
+import blog3 from '../imgs/blog3.png';
+import ai1 from '../imgs/ai1.png';
+import ai2 from '../imgs/ai2.png';
+import ai3 from '../imgs/ai3.png';
+import simplyfi1 from '../imgs/simplyfi1.png';
+import simplyfi2 from '../imgs/simplyfi2.png';
+import simplyfi3 from '../imgs/simplyfi3.png';
 import honey1 from '../imgs/honey1.png';
+import honey2 from '../imgs/honey2.png';
 import ar1 from '../imgs/ar1.jpg';
 import ar2 from '../imgs/ar2.jpg';
 import ar3 from '../imgs/ar3.jpg';
 import ar4 from '../imgs/ar4.jpg';
 import ar5 from '../imgs/ar5.jpg';
-import ar6 from '../imgs/ar6.jpg';
-import ar7 from '../imgs/ar7.jpg';
-import ar8 from '../imgs/ar8.jpg';
 import uppa1 from '../imgs/uppa1.png';
 import uppa2 from '../imgs/uppa2.png';
 import uppa3 from '../imgs/uppa3.png';
 import uppa4 from '../imgs/uppa4.png';
+import game1 from '../imgs/game1.png';
+import game2 from '../imgs/game2.png';
+import game3 from '../imgs/game3.png';
+import game4 from '../imgs/game4.png';
+import sm2 from '../imgs/sm2.png';
+import sm3 from '../imgs/sm3.png';
+import sm4 from '../imgs/sm4.png';
+import sm5 from '../imgs/sm5.png';
+import sm6 from '../imgs/sm6.png';
+import sm7 from '../imgs/sm7.png';
+import sm8 from '../imgs/sm8.png';
+import sm9 from '../imgs/sm9.png';
+import sm10 from '../imgs/sm10.png';
+import sm11 from '../imgs/sm11.png';
+import lechown1 from '../imgs/lechown1.png';
+import lechown2 from '../imgs/lechown2.png';
+import logo1 from '../imgs/logo1.png';
+import logo2 from '../imgs/logo2.png';
+import logo3 from '../imgs/logo3.png';
+import pathviz from '../imgs/pathviz.png';
 
 interface Project {
   title: string;
@@ -60,21 +71,21 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Ratatutor',
-    description: 'RataTutor is an AI-powered study assistant web app that transforms student notes into flashcards, summaries, and quizzes. It features document processing, user authentication, and responsive design for personalized learning.',
-    image: ratatutorImage,
-    gallery: [rata1, rata2, rata3, rata4, rata5],
-    link: 'https://ratatutor.onrender.com',
+    title: 'AI Think So!',
+    description: 'Host a Quiz lets you generate smart, topic-based quizzes in seconds using AI. Whether testing knowledge, hosting a trivia night, or just having fun, this tool makes it effortless to create, share, and play quizzes with anyone, anywhere.',
+    image: aiImage,
+    gallery: [ai1, ai2, ai3],
+    link: 'https://one26finalproj-nhp7.onrender.com/?fbclid=IwY2xjawL5VSNleHRuA2FlbQIxMABicmlkETFFZnJmWjlYUWRnektuNUQ2AR7S5i6qbytrAn6z2mUyq5oWVdNN_uPNKqd8Grn2CFvQ99p4V5eupYufudACew_aem_paV2kYuu8D_EOsbYItVGiA er.com',
     technologies: ['Django', 'React', 'Tailwind CSS'],
     category: 'Website',
     featured: true,
     role: 'UI/UX Designer, Frontend Developer'
   },
   {
-    title: 'ExerGuide AR',
-    description: 'ExerGuide AR is a markerless augmented reality fitness app that uses a 3D virtual coach to demonstrate correct exercise form and reduce injury risks. Designed for Android, it supports visual, audio, and text guidance.',
-    image: exerguideImage,
-    gallery: [ar1, ar2, ar3, ar4, ar5, ar6, ar7, ar8],
+    title: 'DatastructAR',
+    description: 'DataStructAR is a marker-based augmented reality learning app that uses interactive 3D models to visualize and manipulate data structures like arrays, linked lists, stacks, and queues. Designed for Android, it supports hands-on, visual learning to make complex computer science concepts easier to understand.',
+    image: datastructarImage,
+    gallery: [ar1, ar2, ar3, ar4, ar5],
     link: 'https://github.com/nikkamendoza/ExerGuide',
     technologies: ['Unity', 'Vuforia', 'C#', 'Blender'],
     category: 'Mobile App',
@@ -82,21 +93,21 @@ const projects: Project[] = [
     role: 'Full Stack Developer'
   },
   {
-    title: 'The Phishermen',
-    description: 'The Phishermen is an educational cybersecurity platform designed to teach users how to identify and protect against phishing attacks. Through interactive simulations and real-world examples, users learn to spot malicious emails, fake websites, and other social engineering tactics.',
-    image: phishermenImage,
-    gallery: [phisher1, phisher2, phisher3],
-    link: 'https://the-phishermen-blog.vercel.app',
+    title: 'Cybersecurity',
+    description: 'This website is an educational cybersecurity platform designed to teach users how to identify and protect against phishing attacks. Through interactive simulations and real-world examples, users learn to spot malicious emails, fake websites, and other social engineering tactics.',
+    image: blogImage,
+    gallery: [blog1, blog2, blog3],
+    link: 'https://one34-cybersecurity-blog.onrender.com/',
     technologies: ['React', 'JavaScript', 'Tailwind CSS'],
     category: 'Website',
     featured: false,
     role: 'UI/UX Designer, Frontend Developer'
   },
   {
-    title: 'Super PathFinder',
-    description: 'A Mario-themed pathfinding visualizer that simulates Dijkstra’s and A* algorithms on a customizable grid. Users can place obstacles and visualize how each algorithm navigates the environment.',
+    title: 'PathViz',
+    description: 'A web-based tool that visually demonstrates how Dijkstra Algorithm and A Search find the shortest path between two points on a customizable grid.',
     image: pathfinderImage,
-    gallery: [path1, path2, path3],
+    gallery: [pathviz],
     link: 'https://indiv-labs.vercel.app',
     technologies: ['CSS', 'HTML', 'JavaScript'],
     category: 'Website',
@@ -104,32 +115,21 @@ const projects: Project[] = [
     role: 'UI/UX Designer, Frontend Developer'
   },
   {
-    title: 'PennywAIse',
-    description: 'PennywAIse is a budgeting dashboard that helps users manage income and expenses with AI-generated financial insights. It features responsive design and real-time data visualization.',
-    image: pennywaiseImage,
-    gallery: [penny1, penny2, penny3, penny4, penny5],
-    link: 'https://pennywaise.onrender.com',
+    title: 'SimplyFi',
+    description: 'SimplyFi is a budgeting dashboard that helps users manage income and expenses with AI-generated financial insights. It features responsive design and real-time data visualization.',
+    image: simplyfiImage,
+    gallery: [simplyfi1, simplyfi2, simplyfi3],
+    link: 'https://github.com/Fake1prog/CMSC-126_Long-Exam-2_Personal-Budget-Tracker?fbclid=IwY2xjawL5XFJleHRuA2FlbQIxMABicmlkETFFZnJmWjlYUWRnektuNUQ2AR5qfpPWIrLSwtkLb7ChspfHHYs7oMMChSOahEEZE8laU1XqaUOdQ8UC0R6e_Q_aem_nDPgvlda1ZWnEAKK8YAqVg',
     technologies: ['Django', 'JavaScript', 'Tailwind CSS'],
     category: 'Website',
     featured: false,
     role: 'UI/UX Designer, Frontend Developer'
   },
   {
-    title: '2ndlife',
-    description: '2ndLife is an e-commerce web platform focused on the buying and selling of secondhand items. The design emphasizes usability and simplicity to encourage sustainable consumer behavior.',
-    image: secondlifeImage,
-    gallery: [second1, second2, second3],
-    link: 'https://2ndlife-namstech.vercel.app',
-    technologies: ['React', 'Tailwind CSS', 'MongoDB', 'Node.js', 'Express.js'],
-    category: 'Website',
-    featured: false,
-    role: 'UI/UX Designer, Frontend Developer, QA'
-  },
-  {
     title: 'Honey OS',
     description: 'Honey OS is a desktop interface concept featuring voice command integration and basic file management utilities like a notepad, with the goal of simplifying everyday computing tasks.',
     image: honeyImage,
-    gallery: [honey1],
+    gallery: [honey1,honey2],
     link: '#',
     technologies: ['Java', 'NetBeans'],
     category: 'Web App',
@@ -137,16 +137,29 @@ const projects: Project[] = [
     role: 'UI/UX Designer, Frontend Developer'
   },
   {
-    title: 'Sisiw IDE',
+    title: 'Baby IDE',
     description: 'A custom integrated development environment tailored for the Sisiw programming language, complete with run, compile, file I/O features, and syntax highlighting.',
-    image: sisiwImage,
-    gallery: [sisiw1],
+    image: babyImage,
+    gallery: [baby1],
     link: '#',
     technologies: ['Java', 'NetBeans'],
     category: 'Web App',
     featured: true,
     role: 'UI/UX Designer, Frontend Developer'
   },
+
+  {
+    title: '1081',
+    description: 'A top-down educational stealth game set in Cebu, Philippines during Former President Ferdinand Marcos Sr. regime.',
+    image: gameImage,
+    gallery: [game1,game2,game3,game4],
+    link: 'https://liaminaki.itch.io/1081?fbclid=IwY2xjawL5ZDhleHRuA2FlbQIxMABicmlkETFFZnJmWjlYUWRnektuNUQ2AR6sKPpTwmp_3qV0lcG7OqBozjotC7uI-eFLxFY0q2nuUInHjdfl7TYN6QVIXA_aem__ySgjnmbprLdKZnUBaosRg',
+    technologies: ['Unity'],
+    category: 'Web App',
+    featured: true,
+    role: 'UI/UX Designer, Frontend Developer'
+  },
+
   {
     title: 'Uppa',
     description: 'Uppa is a location-based mobile app that connects renters with nearby accommodations—boarding houses, apartments, and condos—making it easy to find and manage rentals. Landlords benefit from organized property management and marketing tools.',
@@ -157,7 +170,41 @@ const projects: Project[] = [
     category: 'Mobile App',
     featured: true,
     role: 'UI/UX Designer'
-  }
+  },
+  // Graphic Design Projects
+  {
+    title: 'Social Media Campaign',
+    description: 'A comprehensive social media campaign featuring engaging posts, stories, and carousel designs for brand awareness and audience engagement. Includes platform-specific optimizations for Instagram, Facebook, and Twitter.',
+    image: smImage,
+    gallery: [sm2,sm3,sm4,sm5,sm6,sm7,sm8,sm9,sm10,sm11],
+    link: '#',
+    technologies: ['Adobe Photoshop', 'Canva', 'Illustrator'],
+    category: 'Graphic Design',
+    featured: false,
+    role: 'Graphic Designer'
+  },
+  {
+    title: 'Gaming Visual Assets',
+    description: 'A collection of gaming-related graphic designs including character concepts, UI elements and game interface mockups. Features vibrant colors and dynamic compositions.',
+    image: lechownImage,
+    gallery:[lechown1,lechown2],
+    link: 'https://github.com/liaminaki/lechown',
+    technologies: ['Adobe Photoshop', 'Illustrator', 'Procreate'],
+    category: 'Graphic Design',
+    featured: false,
+    role: 'Game Artist'
+  },
+  {
+    title: 'Logo Design Portfolio',
+    description: 'A diverse collection of logo designs for various industries. Each logo is crafted with attention to scalability, memorability, and brand identity.',
+    image: logoImage,
+    gallery: [logo1,logo2,logo3],
+    link: '#',
+    technologies: ['Adobe Illustrator', 'Photoshop', 'Figma'],
+    category: 'Graphic Design',
+    featured: false,
+    role: 'Logo Designer'
+  },
 ];
 
 const Projects: React.FC = () => {
@@ -168,7 +215,7 @@ const Projects: React.FC = () => {
   const [previewImageIndex, setPreviewImageIndex] = useState<number | null>(null);
 
   // Determine number of pages (2 for most, 3 for ExerGuide AR)
-  const isAR = selectedProject?.title === 'ExerGuide AR';
+  const isAR = selectedProject?.title === 'DatastructAR';
   const totalPages = isAR ? 3 : 2;
 
   const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
@@ -224,9 +271,11 @@ const Projects: React.FC = () => {
       >
         <div className="projects-container">
           <div className="projects-header">
-            <h2 className="projects-title">
-              <span className="title-highlight">P</span>ROJECT <span className="title-highlight">G</span>ALLERY
-            </h2>
+          <h2 className="projects-title">
+          <strong>
+            <span className="title-highlight">P</span>ROJECT <span className="title-highlight">G</span>ALLERY
+          </strong>
+        </h2>
             <p className="projects-subtitle">
               A collection of creative digital experiences that showcase the intersection of art and technology
             </p>
@@ -371,8 +420,8 @@ const Projects: React.FC = () => {
                     <div className="featured-video-wrapper" style={{marginTop: '2rem'}}>
                       <iframe
                         className="featured-video"
-                        src="https://www.youtube.com/embed/tfrpoiO_sHs"
-                        title="ExerGuide AR Demo Video"
+                        src="https://www.youtube.com/embed/GwXIXIdi_8E"
+                        title="DatastructAR Demo Video"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -431,30 +480,51 @@ const Projects: React.FC = () => {
       </section>
 
       {/* Featured Section */}
+      <h3 className="featured-title-v2 text-center" style={{ fontWeight: 500 }}>
+        FEATURED SHOWCASE
+      </h3>
+
       <section className="featured-section">
         <div className="featured-container artistic" style={{display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '2rem', justifyContent: 'center'}}>
             <div className="featured-video-card-v2">
               <iframe
-                src="https://www.youtube.com/embed/tfrpoiO_sHs"
+                src="https://www.youtube.com/embed/GwXIXIdi_8E"
                 title="Featured Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
             </div>
           <div className="featured-column-right" style={{flex: '2 1 320px', minWidth: '280px', maxWidth: '600px', margin: '0 auto'}}>
-            <h2 className="featured-title-v2">Featured Showcase</h2>
-            <p className="featured-subtitle-v2">A closer look at my work in action.</p>
             <div className="featured-details-v2">
-              <h3 className="featured-details-title-v2">ExerGuide AR: Augmented Reality Fitness</h3>
+              <h3 className="featured-details-title-v2" style={{ fontWeight: 450 }}>DatastructAR: Data Structures Education through an Augmented Reality Application
+              </h3>
               <p className="featured-details-text-v2">
-                This video showcases the core features of ExerGuide AR. Watch as the 3D virtual coach demonstrates exercises in real space, guiding users through safe and effective workouts.
+              An AR-powered learning tool for CS students. Data structures come to life through interactive 3D visualizations.
               </p>
               <ul className="featured-details-list-v2">
-                <li>- Real-time AR exercise demonstrations</li>
-                <li>- Multimodal learning (3D, audio, text)</li>
-                <li>- Interactive model controls</li>
-                <li>- Muscle highlight mode for learning</li>
+                <li>- Real-time AR manipulation of data structures</li>
+                <li>- Interactive 3D models for active learning</li>
+                <li>- Supports arrays, linked lists, stacks, and queues</li>
+                <li>- Grounded in Constructivist Learning Theory and TAM</li>
               </ul>
+            </div>
+          </div>
+
+          <div className="featured-video-card-v2">
+              <iframe
+                src="https://www.youtube.com/embed/fqfxjSRFJx0"
+                title="Featured Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          <div className="featured-column-right" style={{flex: '2 1 320px', minWidth: '280px', maxWidth: '600px', margin: '0 auto'}}>
+            <div className="featured-details-v2">
+              <h3 className="featured-details-title-v2" style={{ fontWeight: 450 }}> 1081
+              </h3>
+              <p className="featured-details-text-v2">
+              A top-down educational stealth game set in Cebu, Philippines during  Former President Ferdinand Marcos Sr.'s regime. Players, as student activists, evade military forces, save key figures, and restore democracy, blending stealth gameplay with historical education.
+              </p>
             </div>
           </div>
         </div>

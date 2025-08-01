@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Contact: React.FC = () => (
-  <section id="contact" className="py-32 bg-white relative overflow-hidden" style={{ fontFamily: 'Comfortaa, cursive' }}>
+  <section id="contact" className="py-32 relative overflow-hidden" style={{ fontFamily: 'Quicksand, sans-serif', backgroundColor: 'transparent', color: '#fff' }}>
     {/* Artistic Background Elements */}
     <div className="absolute inset-0 overflow-hidden">
       <div className="absolute top-10 left-10 w-40 h-40 border border-stone-200 rotate-45 opacity-20"></div>
@@ -10,10 +10,12 @@ const Contact: React.FC = () => (
 
     <div className="relative z-10 max-w-6xl mx-auto px-6">
       <div className="text-center mb-20">
-        <h2 className="section-title">
-          <span className="title-highlight">C</span>ONTACT
+        <h2 className="section-title" style={{ color: '#fff' }}>
+          <strong>
+            <span className="title-highlight">C</span>ONTACT
+          </strong>
         </h2>
-        <p className="text-xl text-stone-600 max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="text-xl text-white max-w-2xl mx-auto font-light leading-relaxed">
           Let's discuss your next creative project and bring your vision to life
         </p>
       </div>
@@ -21,7 +23,7 @@ const Contact: React.FC = () => (
       <div className="grid md:grid-cols-2 gap-16 items-start">
         {/* Left Column - Contact Form */}
         <div>
-          <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-8">
+          <h3 className="text-2xl font-light text-white tracking-wide mb-8">
             Send a Message
           </h3>
           <form className="space-y-6">
@@ -51,6 +53,7 @@ const Contact: React.FC = () => (
             </div>
             <button 
               type="submit" 
+              style={{ backgroundColor: '#fd6f00' }}
               className="curtain-btn contact-button w-full px-8 py-4 bg-stone-800 text-white font-light tracking-wide relative overflow-hidden"
               disabled
               title="Backend not yet implemented"
@@ -63,7 +66,7 @@ const Contact: React.FC = () => (
         {/* Right Column - Contact Information */}
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-8">
+            <h3 className="text-2xl font-light text-white tracking-wide mb-8">
               Get in Touch
             </h3>
             <div className="space-y-6">
@@ -74,8 +77,8 @@ const Contact: React.FC = () => (
                   </svg>
                 </div>
                 <div>
-                  <div className="text-lg font-light text-stone-800 tracking-wide mb-1">Email</div>
-                  <div className="text-stone-600 font-light">mendozanikkajoie@gmail.com</div>
+                  <div className="text-lg font-light text-white tracking-wide mb-1">Email</div>
+                  <div className="text-white font-light">gucorlovely@gmail.com</div>
                 </div>
               </div>
               
@@ -87,8 +90,8 @@ const Contact: React.FC = () => (
                   </svg>
                 </div>
                 <div>
-                  <div className="text-lg font-light text-stone-800 tracking-wide mb-1">Location</div>
-                  <div className="text-stone-600 font-light">Cebu City, Philippines</div>
+                  <div className="text-lg font-light text-white tracking-wide mb-1">Location</div>
+                  <div className="text-white font-light">Cebu City, Philippines</div>
                 </div>
               </div>
               
@@ -99,8 +102,8 @@ const Contact: React.FC = () => (
                   </svg>
                 </div>
                 <div>
-                  <div className="text-lg font-light text-stone-800 tracking-wide mb-1">Response Time</div>
-                  <div className="text-stone-600 font-light">Within 24 hours</div>
+                  <div className="text-lg font-light text-white tracking-wide mb-1">Response Time</div>
+                  <div className="text-white font-light">Within 24 hours</div>
                 </div>
               </div>
             </div>
@@ -108,12 +111,12 @@ const Contact: React.FC = () => (
 
           {/* Social Links */}
           <div>
-            <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-8">
+            <h3 className="text-2xl font-light text-white tracking-wide mb-8">
               Connect With Me
             </h3>
             <div className="flex space-x-6">
               <a 
-                href="https://github.com/nikkamendoza" 
+                href="https://github.com/Lablydaby" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-12 h-12 border border-stone-300 flex items-center justify-center hover:border-stone-600 hover:bg-stone-50 transition-all duration-300"
@@ -123,7 +126,7 @@ const Contact: React.FC = () => (
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com/in/nikka-mendoza" 
+                href="" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-12 h-12 border border-stone-300 flex items-center justify-center hover:border-stone-600 hover:bg-stone-50 transition-all duration-300"
@@ -133,7 +136,7 @@ const Contact: React.FC = () => (
                 </svg>
               </a>
               <a 
-                href="https://facebook.com/niksmndzz" 
+                href="https://www.facebook.com/gucorlovely01/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-12 h-12 border border-stone-300 flex items-center justify-center hover:border-stone-600 hover:bg-stone-50 transition-all duration-300"
@@ -143,7 +146,7 @@ const Contact: React.FC = () => (
                 </svg>
               </a>
               <a 
-                href="https://instagram.com/niksmndzz" 
+                href="https://www.instagram.com/lablydaby/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-12 h-12 border border-stone-300 flex items-center justify-center hover:border-stone-600 hover:bg-stone-50 transition-all duration-300"
