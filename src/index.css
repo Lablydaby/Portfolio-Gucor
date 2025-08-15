@@ -1204,18 +1204,19 @@ button {
 .mobile-nav-menu {
   position: absolute;
   top: 100%;
-  right: 1.5rem; /* Added margin from right edge */
-  width: 250px;
-  background-color: rgba(255, 255, 255, 0.98);
+  right: 0.5rem; /* Reduced margin to avoid overlap with hamburger */
+  width: 200px; /* Slightly smaller width */
+  background-color: #1E1E1E; /* Dark background matching the page */
   backdrop-filter: blur(8px);
   border-radius: 0.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   padding: 1rem;
-  margin-top: 0.25rem; /* Reduced gap from icon */
+  margin-top: 0.5rem; /* Increased gap from icon */
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   pointer-events: none;
+  z-index: 1000; /* Ensure it appears above other elements */
 }
 
 .mobile-nav-menu.open {
@@ -1227,6 +1228,28 @@ button {
 .mobile-nav-menu a {
   padding: 0.75rem 1rem;
   border-radius: 0.375rem;
+  color: #ffffff; /* White text on dark background */
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-nav-menu a:hover {
+  background-color: rgba(253, 111, 0, 0.2); /* Orange background on hover */
+  color: #FD6F00;
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .mobile-nav-menu {
+    right: 0.25rem;
+    width: 180px;
+    padding: 0.75rem;
+  }
+  
+  .mobile-nav-menu a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* Logo Styles */

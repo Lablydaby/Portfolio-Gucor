@@ -14,6 +14,7 @@ import gameImage from '../imgs/game.png';
 import smImage from '../imgs/sm.png';
 import lechownImage from '../imgs/lechown.png';
 import logoImage from '../imgs/logo.png';
+import rehaulImage from '../imgs/rehaul.png';
 
 // Project gallery images
 import blog1 from '../imgs/blog1.png';
@@ -56,6 +57,13 @@ import logo1 from '../imgs/logo1.png';
 import logo2 from '../imgs/logo2.png';
 import logo3 from '../imgs/logo3.png';
 import pathviz from '../imgs/pathviz.png';
+import rehaul1 from '../imgs/rehaul1.png';
+import rehaul2 from '../imgs/rehaul2.png';
+import rehaul3 from '../imgs/rehaul3.png';
+import rehaul4 from '../imgs/rehaul4.png';
+import rehaul5 from '../imgs/rehaul5.png';
+import rehaul6 from '../imgs/rehaul6.png';
+
 
 interface Project {
   title: string;
@@ -86,7 +94,7 @@ const projects: Project[] = [
     description: 'DataStructAR is a marker-based augmented reality learning app that uses interactive 3D models to visualize and manipulate data structures like arrays, linked lists, stacks, and queues. Designed for Android, it supports hands-on, visual learning to make complex computer science concepts easier to understand.',
     image: datastructarImage,
     gallery: [ar1, ar2, ar3, ar4, ar5],
-    link: 'https://github.com/nikkamendoza/ExerGuide',
+    link: 'https://www.youtube.com/watch?v=GwXIXIdi_8E',
     technologies: ['Unity', 'Vuforia', 'C#', 'Blender'],
     category: 'Mobile App',
     featured: false,
@@ -138,7 +146,7 @@ const projects: Project[] = [
   },
   {
     title: 'Baby IDE',
-    description: 'A custom integrated development environment tailored for the Sisiw programming language, complete with run, compile, file I/O features, and syntax highlighting.',
+    description: 'A custom integrated development environment tailored for the Baby programming language, complete with run, compile, file I/O features, and syntax highlighting.',
     image: babyImage,
     gallery: [baby1],
     link: '#',
@@ -194,6 +202,18 @@ const projects: Project[] = [
     featured: false,
     role: 'Game Artist'
   },
+  {
+    title: 'Web Design Rehauls',
+    description: 'A collection of redesigned web interfaces showcasing improved layouts, refined UI elements, and modern visual compositions. Emphasizes clean aesthetics, intuitive navigation, and engaging user experiences through thoughtful design choices.',
+    image: rehaulImage,
+    gallery:[rehaul1,rehaul2,rehaul3,rehaul4,rehaul5,rehaul6],
+    link: 'https://www.figma.com/design/K5aNXcvJPGioPhVx46r6Ul/KA-CHAVA?node-id=0-1&p=f&t=SyLugCxEeqg3dLov-0',
+    technologies: ['Figma', 'Adobe Photoshop'],
+    category: 'Website',
+    featured: false,
+    role: 'UI/UX Developer'
+  },
+  
   {
     title: 'Logo Design Portfolio',
     description: 'A diverse collection of logo designs for various industries. Each logo is crafted with attention to scalability, memorability, and brand identity.',

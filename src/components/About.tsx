@@ -69,7 +69,7 @@ const About: React.FC = () => (
               Approach
             </h3>
             <p className="about-description text-lg text-white leading-relaxed font-light">
-              I start every project by understanding the problem, the users, and the goals. From there, I follow an iterative design and development process—collaborating closely with clients, testing ideas early, and refining based on feedback to ensure the final product is aligned, usable, and meaningful.
+              I start by understanding the problem, the users, and the goals. From there, I follow an iterative design and development process—collaborating closely with clients, testing ideas early, and refining based on feedback to ensure the final product is aligned, usable, and meaningful.
             </p>
           </div>
 

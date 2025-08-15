@@ -46,7 +46,7 @@ const App: React.FC = () => {
           <div className="mobile-nav-button">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="text-stone-800 hover:text-stone-600 focus:outline-none"
+              className="text-white hover:text-stone-300 focus:outline-none"
               aria-label="Toggle menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -59,9 +59,9 @@ const App: React.FC = () => {
         {/* Mobile Menu */}
         <div className={`mobile-nav-menu ${isMenuOpen ? 'open' : ''}`}>
           <div className="flex flex-col items-center space-y-2">
-            <Link to="about" smooth duration={800} onClick={closeMenu} className="block w-full text-center cursor-pointer text-white hover:text-stone-300 font-bold tracking-wide transition-colors duration-300 py-2">ABOUT</Link>
-            <Link to="projects" smooth duration={800} onClick={closeMenu} className="block w-full text-center cursor-pointer text-white hover:text-stone-300 font-bold tracking-wide transition-colors duration-300 py-2">GALLERY</Link>
-            <Link to="contact" smooth duration={800} onClick={closeMenu} className="block w-full text-center cursor-pointer text-white hover:text-stone-300 font-bold tracking-wide transition-colors duration-300 py-2">CONTACT</Link>
+            <Link to="about" smooth duration={800} onClick={closeMenu} className="block w-full text-center cursor-pointer text-white hover:text-orange-500 font-bold tracking-wide transition-colors duration-300 py-2">ABOUT</Link>
+            <Link to="projects" smooth duration={800} onClick={closeMenu} className="block w-full text-center cursor-pointer text-white hover:text-orange-500 font-bold tracking-wide transition-colors duration-300 py-2">GALLERY</Link>
+            <Link to="contact" smooth duration={800} onClick={closeMenu} className="block w-full text-center cursor-pointer text-white hover:text-orange-500 font-bold tracking-wide transition-colors duration-300 py-2">CONTACT</Link>
           </div>
         </div>
       </nav>

@@ -126,7 +126,7 @@ const Contact: React.FC = () => (
                 </svg>
               </a>
               <a 
-                href="" 
+                href="https://www.linkedin.com/in/lovely-shane-gucor-94a1071b5/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-12 h-12 border border-stone-300 flex items-center justify-center hover:border-stone-600 hover:bg-stone-50 transition-all duration-300"
