@@ -80,7 +80,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'AI Think So!',
-    description: 'Host a Quiz lets you generate smart, topic-based quizzes in seconds using AI. Whether testing knowledge, hosting a trivia night, or just having fun, this tool makes it effortless to create, share, and play quizzes with anyone, anywhere.',
+    description: 'AI Think So! lets you generate smart, topic-based quizzes in seconds using AI. Whether testing knowledge, hosting a trivia night, or just having fun, this tool makes it effortless to create, share, and play quizzes with anyone, anywhere.',
     image: aiImage,
     gallery: [ai1, ai2, ai3],
     link: 'https://one26finalproj-nhp7.onrender.com/?fbclid=IwY2xjawL5VSNleHRuA2FlbQIxMABicmlkETFFZnJmWjlYUWRnektuNUQ2AR7S5i6qbytrAn6z2mUyq5oWVdNN_uPNKqd8Grn2CFvQ99p4V5eupYufudACew_aem_paV2kYuu8D_EOsbYItVGiA er.com',
@@ -291,10 +291,11 @@ const Projects: React.FC = () => {
       >
         <div className="projects-container">
           <div className="projects-header">
-          <h2 className="projects-title">
+          <h2 className="projects-title ont-bold text-2xl sm:text-3xl md:text-4xl tracking-wide">
           <strong>
-            <span className="title-highlight">P</span>ROJECT <span className="title-highlight">G</span>ALLERY
-          </strong>
+          <span className="title-highlight">P</span>ROJECT{" "}
+          <span className="title-highlight">G</span>ALLERY
+        </strong>
         </h2>
             <p className="projects-subtitle">
               A collection of creative digital experiences that showcase the intersection of art and technology

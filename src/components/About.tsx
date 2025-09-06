@@ -41,7 +41,9 @@ const About: React.FC = () => (
             <span className="title-highlight">A</span>BOUT
           </strong>
         </h2>
+          <div className="flex justify-center items-center">
       </div>
+    </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-8 items-start">
         {/* Left Column - Text Content */}
@@ -102,8 +104,25 @@ const About: React.FC = () => (
                 <span className="text-4xl mb-2 animate-wiggle">☁️</span>
                 <div className="text-xl font-light text-white mb-1">Tools</div>
                 <div className="text-sm text-white font-light mb-6">Figma, Adobe Suite, Github, Canva</div>
-                <div className="w-32 h-px bg-stone-400 absolute bottom-4"></div>
               </div>
+            </div>
+
+            <div className="flex justify-center items-center mt-10">
+              <a 
+                href="/Resume_Gucor.pdf" 
+                download
+                className="group px-8 py-4 border-2 rounded-md flex items-center justify-center transition-all duration-500"
+                style={{
+                  backgroundColor: '#FD6F00',
+                  color: '#fff',
+                  borderColor: '#FD6F00',
+                  fontWeight: 300,
+                  letterSpacing: '0.05em',
+                  fontSize: '1rem',
+                }}
+              >
+                <span className="font-bold">DOWNLOAD RESUME</span>
+              </a>
             </div>
           </div>
         </div>
