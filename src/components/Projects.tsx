@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 // Project thumbnails
 import simplyfiImage from '../imgs/simplyfi.png';
@@ -379,9 +379,9 @@ const Projects: React.FC = () => {
                 <div className={`modal-page ${currentPage === 0 ? 'visible' : ''}`}> {/* Frontpage */}
                   <span className="modal-project-category">{selectedProject.category}</span>
                   <h2 className="modal-project-title">{selectedProject.title}</h2>
-                  {(selectedProject.link?.trim() && selectedProject.link !== '#' && !selectedProject.link.startsWith('javascript:')) || selectedProject.title === 'ExerGuide AR' ? (
+                  {(selectedProject.link?.trim() && selectedProject.link !== '#' && !/^javascript:/i.test(selectedProject.link)) || selectedProject.title === 'ExerGuide AR' ? (
                   <div style={{ margin: '0 0 0.5rem 0', display: 'flex', gap: '1.2rem', alignItems: 'center' }}>
-                    {selectedProject.link?.trim() && selectedProject.link !== '#' && !selectedProject.link.startsWith('javascript:') && (
+                    {selectedProject.link?.trim() && selectedProject.link !== '#' && !/^javascript:/i.test(selectedProject.link) && (
                     <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="modal-website-link modal-link-small cursor-target">
                       <span>{selectedProject.title === 'Uppa' ? 'Visit Design' : selectedProject.title === 'ExerGuide AR' ? 'GitHub Link' : 'Visit Website'}</span>
                       <svg style={{marginLeft: '0.3em', width: '1.1em', height: '1.1em', verticalAlign: 'middle', opacity: 0.8}} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -427,13 +427,13 @@ const Projects: React.FC = () => {
                     <div className="modal-image-grid">
                       {selectedProject.gallery.map((img, index) => (
                         <div key={index} className="modal-image-container" onClick={() => handleImageClick(index)}>
-                          <img src={img} alt={`${selectedProject.title} gallery image ${index + 1}`} className="modal-gallery-image" />
+                          <img src={img} alt={`${selectedProject.title} gallery ${index + 1}`} className="modal-gallery-image" />
                         </div>
                       ))}
                     </div>
                   ) : (
                     <div className="modal-single-image-container" onClick={() => handleImageClick(0)}>
-                      <img src={selectedProject.gallery[0]} alt={`${selectedProject.title} gallery image 1`} className="modal-single-image" />
+                      <img src={selectedProject.gallery[0]} alt={`${selectedProject.title} gallery 1`} className="modal-single-image" />
                     </div>
                   )}
                 </div>
