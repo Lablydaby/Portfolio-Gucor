@@ -1,7 +1,31 @@
 import React from 'react';
+import { SiReact, SiTypescript, SiTailwindcss, SiFigma, SiGithub, SiHtml5, SiCss3, SiCanva } from 'react-icons/si';
+import type { IconType } from 'react-icons';
+import ProfileCard from './ProfileCard';
+import LogoLoop from './LogoLoop';
+import type { LogoItem } from './LogoLoop';
+import profileImage from '../imgs/profile.png';
+import Lably1 from '../imgs/Lably1.jpg';
+import './About.css';
+
+/** Renders a react-icons IconType as a ReactElement for use with createElement (avoids IconType/ReactNode strict typing). */
+function iconNode(Icon: IconType): React.ReactNode {
+  return React.createElement(Icon as React.ComponentType<Record<string, unknown>>);
+}
+
+const techLogos: LogoItem[] = [
+  { node: iconNode(SiReact), title: 'React', href: 'https://react.dev' },
+  { node: iconNode(SiTypescript), title: 'TypeScript', href: 'https://www.typescriptlang.org' },
+  { node: iconNode(SiTailwindcss), title: 'Tailwind CSS', href: 'https://tailwindcss.com' },
+  { node: iconNode(SiHtml5), title: 'HTML5', href: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+  { node: iconNode(SiCss3), title: 'CSS3', href: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+  { node: iconNode(SiFigma), title: 'Figma', href: 'https://figma.com' },
+  { node: iconNode(SiGithub), title: 'GitHub', href: 'https://github.com' },
+  { node: iconNode(SiCanva), title: 'Canva', href: 'https://canva.com' },
+];
 
 const About: React.FC = () => (
-  <section id="about" className="py-32 sm:py-16 relative overflow-hidden" style={{ fontFamily: 'Quicksand, sans-serif', backgroundColor: 'transparent', color: '#fff' }}>
+  <section id="about" className="py-32 sm:py-16 relative overflow-hidden" style={{ fontFamily: 'Figtree, sans-serif', backgroundColor: 'transparent', color: '#fff' }}>
     {/* Multiple Scattered Gray Blobs Background */}
     <div className="absolute inset-0 -z-10">
       <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -36,82 +60,51 @@ const About: React.FC = () => (
 
     <div className="relative z-10 max-w-6xl mx-auto px-6">
       <div className="flex flex-col items-center mb-20">
-        <h2 className="section-title" style={{ color: '#fff'}}>
+        <h2 className="section-title cursor-target" style={{ color: '#fff'}}>
           <strong>
             <span className="title-highlight">A</span>BOUT
           </strong>
         </h2>
-          <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center">
+        </div>
       </div>
-    </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-8 items-start">
-        {/* Left Column - Text Content */}
+        {/* Left Column - Text Content (from Profile + About) */}
         <div className="space-y-8">
           <div>
             <h3 className="text-2xl font-medium text-white tracking-wide mb-4">
               The Artist Behind the Code
             </h3>
             <p className="about-description text-lg text-white leading-relaxed font-light">
-            I’m a developer and designer with over 5 years of experience in graphic design and UI/UX. With a strong eye for aesthetics and a deep understanding of user behavior, I craft digital experiences that are as intuitive as they are impactful. I bridge the gap between form and function—ensuring every pixel has purpose and every line of code enhances the user journey.
+              Hey, I'm Lovely — a Designer-Developer blending code and creativity. With over 5 years of experience in UI/UX and graphic design, I craft clean, intuitive, and purposeful digital experiences that don't just look good, but solve real problems and feel human.
             </p>
           </div>
 
-          <div>
+          {/* Technical Palette - logo loop */}
+          <div className="mt-10 about-tech-loop">
             <h3 className="text-2xl font-medium text-white tracking-wide mb-4">
-              Design Philosophy
+              Technical Palette
             </h3>
-            <p className="about-description text-lg text-white leading-relaxed font-light">
-            I approach every project with intention: understanding the challenge, the users, and the desired outcome. From there, I follow an iterative, human-centered process—blending design thinking, clean development, and continuous collaboration. Every step is about refining ideas, testing solutions, and ensuring the final product is aligned, intuitive, and deeply usable.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-medium text-white tracking-wide mb-4">
-              Approach
-            </h3>
-            <p className="about-description text-lg text-white leading-relaxed font-light">
-              I start by understanding the problem, the users, and the goals. From there, I follow an iterative design and development process—collaborating closely with clients, testing ideas early, and refining based on feedback to ensure the final product is aligned, usable, and meaningful.
-            </p>
-          </div>
-
-          {/* Signature */}
-          <div className="mt-10">
-            <span className="block text-3xl font-signature text-white tracking-widest">— Lovely</span>
-          </div>
-        </div>
-
-        {/* Right Column - Skills with Animated Icons */}
-        <div className="space-y-12">
-          <div>
-            <h3 className="text-2xl font-medium text-white tracking-wide mb-8 text-center">
-              Technical palette
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col items-center p-6 border border-stone-200 hover:border-blue-400 transition-colors duration-300 rounded-xl hover:scale-105 transform-gpu relative">
-                <span className="text-4xl mb-2 animate-bounce">💻</span>
-                <div className="text-xl font-light text-white mb-1">Frontend</div>
-                <div className="text-sm text-white font-light mb-6">React, Vue, TypeScript, Tailwind CSS, JavaScript, HTML, CSS</div>
-                <div className="w-32 h-px bg-stone-400 absolute bottom-4"></div>
-              </div>
-              <div className="flex flex-col items-center p-6 border border-stone-200 hover:border-pink-400 transition-colors duration-300 rounded-xl hover:scale-105 transform-gpu relative">
-                <span className="text-4xl mb-2 animate-pulse">🎨</span>
-                <div className="text-xl font-light text-white mb-1">Design</div>
-                <div className="text-sm text-white font-light mb-6">UI/UX, Prototyping, Mockups</div>
-                <div className="w-32 h-px bg-stone-400 absolute bottom-4"></div>
-              </div>
-              <div className="flex flex-col items-center p-6 border border-stone-200 hover:border-yellow-400 transition-colors duration-300 rounded-xl hover:scale-105 transform-gpu relative">
-                <span className="text-4xl mb-2 animate-wiggle">☁️</span>
-                <div className="text-xl font-light text-white mb-1">Tools</div>
-                <div className="text-sm text-white font-light mb-6">Figma, Adobe Suite, Github, Canva</div>
-              </div>
+            <div style={{ height: '80px', position: 'relative', overflow: 'hidden' }}>
+              <LogoLoop
+                logos={techLogos}
+                speed={80}
+                direction="left"
+                logoHeight={48}
+                gap={48}
+                hoverSpeed={0}
+                scaleOnHover
+                fadeOut
+                fadeOutColor="#1E1E1E"
+                ariaLabel="Technology stack"
+              />
             </div>
-
-            <div className="flex justify-center items-center mt-10">
+            <div className="flex justify-start items-center mt-15">
               <a 
                 href="/Resume_Gucor.pdf" 
                 download
-                className="group px-8 py-4 border-2 rounded-md flex items-center justify-center transition-all duration-500"
+                className="group cursor-target px-8 py-4 border-2 flex items-center justify-center transition-all duration-500"
                 style={{
                   backgroundColor: '#FD6F00',
                   color: '#fff',
@@ -119,6 +112,7 @@ const About: React.FC = () => (
                   fontWeight: 300,
                   letterSpacing: '0.05em',
                   fontSize: '1rem',
+                  borderRadius: '20px',
                 }}
               >
                 <span className="font-bold">DOWNLOAD RESUME</span>
@@ -126,9 +120,33 @@ const About: React.FC = () => (
             </div>
           </div>
         </div>
+
+        {/* Right Column - Profile Card */}
+        <div className="space-y-12">
+          <div className="flex justify-center items-center">
+            <ProfileCard
+              name="Lovely"
+              title="UI/UX Designer"
+              handle="lably"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl={profileImage}
+              miniAvatarUrl={Lably1}
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+              onContactClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   </section>
 );
 
-export default About; 
+export default About;

@@ -116,7 +116,7 @@ const projects: Project[] = [
     description: 'A web-based tool that visually demonstrates how Dijkstra Algorithm and A Search find the shortest path between two points on a customizable grid.',
     image: pathfinderImage,
     gallery: [pathviz],
-    link: 'https://indiv-labs.vercel.app',
+    link: 'https://github.com/Lablydaby/Gucor_LAB3#',
     technologies: ['CSS', 'HTML', 'JavaScript'],
     category: 'Website',
     featured: false,
@@ -291,7 +291,7 @@ const Projects: React.FC = () => {
       >
         <div className="projects-container">
           <div className="projects-header">
-          <h2 className="projects-title ont-bold text-2xl sm:text-3xl md:text-4xl tracking-wide">
+          <h2 className="projects-title ont-bold text-2xl sm:text-3xl md:text-4xl tracking-wide cursor-target">
           <strong>
           <span className="title-highlight">P</span>ROJECT{" "}
           <span className="title-highlight">G</span>ALLERY
@@ -307,7 +307,7 @@ const Projects: React.FC = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`filter-button ${selectedCategory === category ? 'active' : ''}`}
+                className={`filter-button cursor-target ${selectedCategory === category ? 'active' : ''}`}
               >
                 {category.toUpperCase()}
               </button>
@@ -345,7 +345,7 @@ const Projects: React.FC = () => {
                     </div>
                     <a
                       href={project.link}
-                      className="project-link"
+                      className="project-link cursor-target"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -369,7 +369,7 @@ const Projects: React.FC = () => {
             <div
               className="modal-content"
               onClick={e => e.stopPropagation()}
-              style={{ fontFamily: "'Cutive Mono', 'Courier New', monospace" }}
+              style={{ fontFamily: "'Figtree', sans-serif" }}
             >
               <button onClick={closeModal} className="modal-close-button">
                 <svg className="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -379,8 +379,10 @@ const Projects: React.FC = () => {
                 <div className={`modal-page ${currentPage === 0 ? 'visible' : ''}`}> {/* Frontpage */}
                   <span className="modal-project-category">{selectedProject.category}</span>
                   <h2 className="modal-project-title">{selectedProject.title}</h2>
+                  {(selectedProject.link?.trim() && selectedProject.link !== '#' && !selectedProject.link.startsWith('javascript:')) || selectedProject.title === 'ExerGuide AR' ? (
                   <div style={{ margin: '0 0 0.5rem 0', display: 'flex', gap: '1.2rem', alignItems: 'center' }}>
-                    <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="modal-website-link modal-link-small">
+                    {selectedProject.link?.trim() && selectedProject.link !== '#' && !selectedProject.link.startsWith('javascript:') && (
+                    <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="modal-website-link modal-link-small cursor-target">
                       <span>{selectedProject.title === 'Uppa' ? 'Visit Design' : selectedProject.title === 'ExerGuide AR' ? 'GitHub Link' : 'Visit Website'}</span>
                       <svg style={{marginLeft: '0.3em', width: '1.1em', height: '1.1em', verticalAlign: 'middle', opacity: 0.8}} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="2" />
@@ -388,8 +390,9 @@ const Projects: React.FC = () => {
                         <path d="M15 4h5v5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </a>
+                    )}
                     {selectedProject.title === 'ExerGuide AR' && (
-                      <a href="https://drive.google.com/drive/u/0/folders/1xQN5uzOku0qNGzQwqFNX_hSV_-TypQfD" target="_blank" rel="noopener noreferrer" className="modal-website-link modal-link-small">
+                      <a href="https://drive.google.com/drive/u/0/folders/1xQN5uzOku0qNGzQwqFNX_hSV_-TypQfD" target="_blank" rel="noopener noreferrer" className="modal-website-link modal-link-small cursor-target">
                         <span>APK Link</span>
                         <svg style={{marginLeft: '0.3em', width: '1.1em', height: '1.1em', verticalAlign: 'middle', opacity: 0.8}} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="2" />
@@ -399,6 +402,7 @@ const Projects: React.FC = () => {
                       </a>
                     )}
                   </div>
+                  ) : null}
                   <div className="modal-divider"></div>
                   <p className="modal-project-description">{selectedProject.description}</p>
                   <div className="modal-role-section">
@@ -502,7 +506,7 @@ const Projects: React.FC = () => {
 
       {/* Featured Section */}
       <h3 className="featured-title-v2 text-center" style={{ fontWeight: 500 }}>
-        FEATURED SHOWCASE
+        <span className="cursor-target">FEATURED SHOWCASE</span>
       </h3>
 
       <section className="featured-section">

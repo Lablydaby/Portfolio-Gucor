@@ -1,0 +1,294 @@
+.case-study-carousel-container {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 16px 24px 16px 24px;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.case-study-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.case-study-carousel-arrow:hover:not(:disabled) {
+  background: rgba(253, 111, 0, 0.9);
+  color: #fff;
+}
+
+.case-study-carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.case-study-carousel-arrow--left {
+  left: 8px;
+}
+
+.case-study-carousel-arrow--right {
+  right: 8px;
+}
+
+.case-study-carousel-container--fullpage {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  padding: 24px 24px 32px;
+  background: #181818;
+  min-height: 0;
+}
+
+.case-study-carousel-track {
+  display: flex;
+  cursor: grab;
+  margin: 0 auto;
+}
+
+.case-study-carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-item.carousel-item--image {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backface-visibility: hidden;
+  height: auto;
+}
+
+.carousel-item.carousel-item--image.carousel-item--fullpage {
+  border-radius: 12px;
+}
+
+.carousel-item-image-wrap {
+  width: 100%;
+  display: block;
+  line-height: 0;
+}
+
+.carousel-item-image-wrap[role='button'] {
+  cursor: pointer;
+}
+
+.carousel-item--fullpage .carousel-item-image-wrap {
+  height: 100%;
+  min-height: 0;
+}
+
+.carousel-item-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.carousel-item--fullpage .carousel-item-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.case-study-carousel-container--fixed-height .carousel-item-image-wrap {
+  height: 100%;
+  min-height: 0;
+}
+
+.case-study-carousel-container--fixed-height .carousel-item-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.case-study-carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0 8px;
+}
+
+.case-study-carousel-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.case-study-carousel-indicator.active {
+  background-color: #fd6f00;
+}
+
+.case-study-carousel-indicator.inactive {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.case-study-carousel-indicator.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Lightbox – inset so click-outside (dark area) closes */
+.case-study-carousel-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.case-study-carousel-lightbox-content {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 1;
+}
+
+/* Wrapper shrink-wraps the image so arrows align to image, not viewport center */
+.case-study-carousel-lightbox-image-wrap {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.case-study-carousel-lightbox-image-wrap .case-study-carousel-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.case-study-carousel-lightbox-content img,
+.case-study-carousel-lightbox-image-wrap img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 4rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* Close (exit) – top right, clear and tappable */
+.case-study-carousel-lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.case-study-carousel-lightbox-close:hover {
+  background: rgba(253, 111, 0, 0.9);
+  color: #fff;
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(253, 111, 0, 0.4);
+}
+
+.case-study-carousel-lightbox-close:focus-visible {
+  outline: 2px solid #fd6f00;
+  outline-offset: 2px;
+}
+
+/* Prev / Next – on image, black icons on light pill, white on hover */
+.case-study-carousel-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.20);
+}
+
+.case-study-carousel-lightbox-nav:hover {
+  background: rgba(253, 111, 0, 0.9);
+  color: #fff;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 16px rgba(253, 111, 0, 0.4);
+}
+
+.case-study-carousel-lightbox-nav:focus-visible {
+  outline: 2px solid #fd6f00;
+  outline-offset: 2px;
+}
+
+/* Explicit placement (prev = left, next = right) */
+.case-study-carousel-lightbox-image-wrap .case-study-carousel-lightbox-nav--prev {
+  left: 0.5rem;
+  right: auto;
+}
+
+.case-study-carousel-lightbox-image-wrap .case-study-carousel-lightbox-nav--next {
+  left: auto;
+  right: 0.5rem;
+}

@@ -42,7 +42,7 @@ const floatKeyframes = `
 
 const CreatorGallery: FC = () => {
   return (
-    <section id="creator-gallery" style={{ position: 'relative', minHeight: '100vh', background: '#8B8078', overflow: 'hidden', fontFamily: 'Quicksand, sans-serif' }}>
+    <section id="creator-gallery" style={{ position: 'relative', minHeight: '100vh', background: '#8B8078', overflow: 'hidden', fontFamily: 'Figtree, sans-serif' }}>
       <style>{floatKeyframes}</style>
       {/* Floating Blobs and Images */}
       {/* Render blobs first for background */}

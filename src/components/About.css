@@ -1,0 +1,110 @@
+/* Technical Palette logo loop - white icons, orange focus/hover */
+.about-tech-loop .logoloop__link,
+.about-tech-loop .logoloop__node {
+  color: #fff;
+}
+
+.about-tech-loop .logoloop__link svg,
+.about-tech-loop .logoloop__node svg {
+  fill: currentColor;
+}
+
+.about-tech-loop .logoloop__link:hover,
+.about-tech-loop .logoloop__link:hover .logoloop__node {
+  color: #FD6F00;
+}
+
+/* Focus ring (circle) orange */
+.about-tech-loop .logoloop__link:focus-visible {
+  outline: 2px solid #FD6F00;
+  outline-offset: 2px;
+}
+
+/* Palette item popup overlay */
+.about-palette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  animation: about-palette-fadeIn 0.2s ease-out;
+}
+
+@keyframes about-palette-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.about-palette-modal {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  padding: 2rem 2rem 2.5rem;
+  background: #1e1e1e;
+  border: 1px solid rgba(253, 111, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: about-palette-scaleIn 0.25s ease-out;
+}
+
+@keyframes about-palette-scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.about-palette-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.about-palette-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.about-palette-modal-emoji {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.about-palette-modal-title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #FD6F00;
+}
+
+.about-palette-modal-desc {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 300;
+}
