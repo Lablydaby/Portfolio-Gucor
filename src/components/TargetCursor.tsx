@@ -1,7 +1,9 @@
-import { useEffect, useRef, useCallback, useMemo } from 'react';
+import { useEffect, useRef, useCallback, useMemo, useState } from 'react';
 
 import { gsap } from 'gsap';
 import './TargetCursor.css';
+
+const SMALL_SCREEN_BREAKPOINT = 768;
 
 const TargetCursor = ({
   targetSelector = '.cursor-target',
@@ -19,14 +21,24 @@ const TargetCursor = ({
   const tickerFnRef = useRef<(() => void) | null>(null);
   const activeStrengthRef = useRef(0);
 
-  const isMobile = useMemo(() => {
-    const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    const isSmallScreen = window.innerWidth <= 768;
+  const [isSmallViewport, setIsSmallViewport] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth <= SMALL_SCREEN_BREAKPOINT
+  );
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${SMALL_SCREEN_BREAKPOINT}px)`);
+    const handler = () => setIsSmallViewport(mq.matches);
+    mq.addEventListener('change', handler);
+    handler();
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const isMobileDevice = useMemo(() => {
     const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
     const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
-    const isMobileUserAgent = mobileRegex.test(userAgent.toLowerCase());
-    return (hasTouchScreen && isSmallScreen) || isMobileUserAgent;
+    return mobileRegex.test(userAgent.toLowerCase());
   }, []);
+
+  const hideCursor = isSmallViewport || isMobileDevice;
 
   const constants = useMemo(
     () => ({
@@ -47,7 +59,7 @@ const TargetCursor = ({
   }, []);
 
   useEffect(() => {
-    if (isMobile || !cursorRef.current) return;
+    if (hideCursor || !cursorRef.current) return;
 
     const originalCursor = document.body.style.cursor;
     if (hideDefaultCursor) {
@@ -318,19 +330,19 @@ const TargetCursor = ({
       targetCornerPositionsRef.current = null;
       activeStrengthRef.current = 0;
     };
-  }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, isMobile, hoverDuration, parallaxOn]);
+  }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, hideCursor, hoverDuration, parallaxOn]);
 
   useEffect(() => {
-    if (isMobile || !cursorRef.current || !spinTl.current) return;
+    if (hideCursor || !cursorRef.current || !spinTl.current) return;
     if (spinTl.current.isActive()) {
       spinTl.current.kill();
       spinTl.current = gsap
         .timeline({ repeat: -1 })
         .to(cursorRef.current, { rotation: '+=360', duration: spinDuration, ease: 'none' });
     }
-  }, [spinDuration, isMobile]);
+  }, [spinDuration, hideCursor]);
 
-  if (isMobile) {
+  if (hideCursor) {
     return null;
   }
 

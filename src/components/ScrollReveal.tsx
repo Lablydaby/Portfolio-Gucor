@@ -1,5 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+
+const MOBILE_BREAKPOINT = 768;
+function useIsSmallScreen(): boolean {
+  const [isSmall, setIsSmall] = useState(() => typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT);
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+    const handler = () => setIsSmall(mq.matches);
+    mq.addEventListener('change', handler);
+    handler();
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return isSmall;
+}
 
 const defaultVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -24,6 +37,8 @@ type ScrollRevealProps = {
   variants?: typeof defaultVariants;
   /** Render as this HTML element or motion component */
   as?: keyof typeof motion;
+  /** When true, no scroll animation (e.g. for mobile to avoid lag). When undefined, auto-disables on small screens. */
+  disabled?: boolean;
 };
 
 export default function ScrollReveal({
@@ -34,7 +49,14 @@ export default function ScrollReveal({
   once = true,
   variants,
   as: Component = 'div',
+  disabled,
 }: ScrollRevealProps) {
+  const isSmallScreen = useIsSmallScreen();
+  const effectivelyDisabled = disabled ?? isSmallScreen;
+  if (effectivelyDisabled) {
+    return <div className={className}>{children}</div>;
+  }
+
   const MotionComp = motion[Component] as typeof motion.div;
   const resolvedVariants = variants ?? {
     ...defaultVariants,

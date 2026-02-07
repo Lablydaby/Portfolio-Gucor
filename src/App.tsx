@@ -12,13 +12,27 @@ import LiquidEther from './components/LiquidEther';
 import ScrollReveal from './components/ScrollReveal';
 import TargetCursor from './components/TargetCursor';
 
-const NavLink: React.FC<{ to: string; scrollTo?: string; children: React.ReactNode; onClick?: () => void; className?: string }> = ({ to, scrollTo, children, onClick, className = '' }) => {
+const MOBILE_BREAKPOINT = 768;
+
+function useIsSmallScreen(): boolean {
+  const [isSmall, setIsSmall] = useState(() => typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT);
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+    const handler = () => setIsSmall(mq.matches);
+    mq.addEventListener('change', handler);
+    handler();
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return isSmall;
+}
+
+const NavLink: React.FC<{ to: string; scrollTo?: string; children: React.ReactNode; onClick?: () => void; className?: string; smoothScroll?: boolean }> = ({ to, scrollTo, children, onClick, className = '', smoothScroll = true }) => {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
   if (isHome && scrollTo) {
     return (
-      <ScrollLink to={scrollTo} smooth duration={800} onClick={onClick} className={className}>
+      <ScrollLink to={scrollTo} smooth={smoothScroll} duration={smoothScroll ? 800 : 0} onClick={onClick} className={className}>
         {children}
       </ScrollLink>
     );
@@ -35,6 +49,7 @@ const App: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isSmallScreen = useIsSmallScreen();
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -71,9 +86,10 @@ const App: React.FC = () => {
               left: 0,
               zIndex: 0,
               pointerEvents: 'none',
+              backgroundColor: isSmallScreen ? '#1E1E1E' : undefined,
             }}
           >
-            <LiquidEther
+            {!isSmallScreen && <LiquidEther
               colors={['#FD6F00', '#FF8C42', '#FFD580']}
               mouseForce={10}
               cursorSize={100}
@@ -89,14 +105,14 @@ const App: React.FC = () => {
               takeoverDuration={0.25}
               autoResumeDelay={3000}
               autoRampDuration={0.6}
-            />
+            />}
           </div>
       )}
 
       <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-stone-200" ref={navRef}>
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           {isHome ? (
-            <ScrollLink to="hero" smooth duration={800} onClick={closeMenu} className="logo-container">
+            <ScrollLink to="hero" smooth={!isSmallScreen} duration={isSmallScreen ? 0 : 800} onClick={closeMenu} className="logo-container">
               <div className="logo">
                 L<span className="logo-m">G</span>
               </div>
@@ -110,10 +126,10 @@ const App: React.FC = () => {
           )}
 
           <div className="desktop-nav flex items-center space-x-8">
-            <NavLink to="/" scrollTo="case-study" onClick={closeMenu} className={navLinkClass}>CASE STUDIES</NavLink>
-            <NavLink to="/" scrollTo="about" onClick={closeMenu} className={navLinkClass}>ABOUT</NavLink>
-            <NavLink to="/" scrollTo="projects" onClick={closeMenu} className={navLinkClass}>GALLERY</NavLink>
-            <NavLink to="/" scrollTo="contact" onClick={closeMenu} className={navLinkClass}>CONTACT</NavLink>
+            <NavLink to="/" scrollTo="case-study" onClick={closeMenu} className={navLinkClass} smoothScroll={!isSmallScreen}>CASE STUDIES</NavLink>
+            <NavLink to="/" scrollTo="about" onClick={closeMenu} className={navLinkClass} smoothScroll={!isSmallScreen}>ABOUT</NavLink>
+            <NavLink to="/" scrollTo="projects" onClick={closeMenu} className={navLinkClass} smoothScroll={!isSmallScreen}>GALLERY</NavLink>
+            <NavLink to="/" scrollTo="contact" onClick={closeMenu} className={navLinkClass} smoothScroll={!isSmallScreen}>CONTACT</NavLink>
           </div>
 
           <div className="mobile-nav-button">
@@ -131,10 +147,10 @@ const App: React.FC = () => {
 
         <div className={`mobile-nav-menu ${isMenuOpen ? 'open' : ''}`}>
           <div className="flex flex-col items-center space-y-2">
-            <NavLink to="/" scrollTo="case-study" onClick={closeMenu} className={navLinkClassMobile}>CASE STUDIES</NavLink>
-            <NavLink to="/" scrollTo="about" onClick={closeMenu} className={navLinkClassMobile}>ABOUT</NavLink>
-            <NavLink to="/" scrollTo="projects" onClick={closeMenu} className={navLinkClassMobile}>GALLERY</NavLink>
-            <NavLink to="/" scrollTo="contact" onClick={closeMenu} className={navLinkClassMobile}>CONTACT</NavLink>
+            <NavLink to="/" scrollTo="case-study" onClick={closeMenu} className={navLinkClassMobile} smoothScroll={!isSmallScreen}>CASE STUDIES</NavLink>
+            <NavLink to="/" scrollTo="about" onClick={closeMenu} className={navLinkClassMobile} smoothScroll={!isSmallScreen}>ABOUT</NavLink>
+            <NavLink to="/" scrollTo="projects" onClick={closeMenu} className={navLinkClassMobile} smoothScroll={!isSmallScreen}>GALLERY</NavLink>
+            <NavLink to="/" scrollTo="contact" onClick={closeMenu} className={navLinkClassMobile} smoothScroll={!isSmallScreen}>CONTACT</NavLink>
           </div>
         </div>
       </nav>
@@ -153,7 +169,7 @@ const App: React.FC = () => {
                       speed={1.5}
                       curveAmount={280}
                       direction="left"
-                      interactive={true}
+                      interactive={!isSmallScreen}
                     />
                   </section>
                 </ScrollReveal>

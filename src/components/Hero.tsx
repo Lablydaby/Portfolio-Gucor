@@ -13,13 +13,13 @@ const Hero: React.FC = () => {
   `;
 
   return (
-    <section className="flex flex-col justify-center items-center text-center px-6 relative overflow-hidden pt-8" style={{ fontFamily: 'Figtree, sans-serif', minHeight: '100vh', paddingBottom: '5rem' }}>
+    <section className="hero-section flex flex-col justify-center items-center text-center px-4 relative overflow-hidden pt-6 pb-12" style={{ fontFamily: 'Figtree, sans-serif', minHeight: '100vh' }}>
       <style>{waveKeyframes}</style>
       {/* Abstract Animated Squares - Randomly Scattered */}
     {/*  */}
       {/* Main Content */}
 
-      <div className="relative z-10 max-w-2xl mx-auto px-6 w-full flex flex-col items-center text-center gap-6">
+      <div className="relative z-10 max-w-2xl mx-auto px-2 w-full flex flex-col items-center text-center gap-4">
         <h2 className="hero-greeting text-white mb-0 font-light" style={{ fontFamily: 'Figtree, sans-serif', margin: 0 }}>
           Hi, I'm Lovely! <span style={{ display: 'inline-block', animation: 'wave 2.5s ease-in-out infinite', transformOrigin: '70% 70%' }}>👋</span>
         </h2>
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
         >
           <span className="cursor-target">
             <ShinyText
-              text="UI/UX DEVELOPER"
+              text="UI/UX DESIGNER"
               speed={2.5}
               delay={0}
               color="#e4e4e4"

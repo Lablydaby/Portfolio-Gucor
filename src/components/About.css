@@ -108,3 +108,56 @@
   color: rgba(255, 255, 255, 0.88);
   font-weight: 300;
 }
+
+/* About section: full-width responsive, no horizontal overflow */
+#about {
+  overflow-x: hidden;
+}
+#about .about-inner,
+#about .relative.z-10.max-w-6xl {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+@media (min-width: 769px) {
+  #about .about-inner {
+    padding-left: 7rem;
+  }
+}
+@media (max-width: 768px) {
+  #about .about-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+#about .grid {
+  min-width: 0;
+  width: 100%;
+}
+#about .grid > div {
+  min-width: 0;
+}
+#about .space-y-8 {
+  min-width: 0;
+  width: 100%;
+}
+#about .about-tech-loop {
+  min-width: 0;
+  overflow: hidden;
+}
+#about .about-tech-loop > div {
+  max-width: 100%;
+}
+
+/* Profile card column */
+#about .grid.grid-cols-1 > div:last-child,
+#about .grid > div:last-child {
+  min-width: 0;
+  width: 100%;
+}
+#about .grid .flex.justify-center.items-center {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}

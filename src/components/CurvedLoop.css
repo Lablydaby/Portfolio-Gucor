@@ -7,6 +7,12 @@
   width: 100%;
   background: transparent;
 }
+@media (max-width: 768px) {
+  .curved-loop-jacket {
+    margin-top: -8vh;
+    min-height: 12vh;
+  }
+}
 
 .curved-loop-svg {
   user-select: none;
@@ -21,4 +27,12 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
+}
+@media (max-width: 768px) {
+  .curved-loop-svg {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+  .curved-loop-jacket {
+    min-height: 16vh;
+  }
 }

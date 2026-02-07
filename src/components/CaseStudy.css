@@ -103,6 +103,7 @@
 
 .case-study-header-centered .case-study-header-text {
   max-width: 100%;
+  text-align: center;
 }
 
 /* Custom cursor on CASE STUDIES heading only: hide default on desktop */
@@ -133,6 +134,9 @@
     align-items: flex-start;
     min-height: auto;
     margin-bottom: 1.5rem;
+  }
+  .case-study-header-row.case-study-header-centered {
+    align-items: center;
   }
 
   .case-study-header-text {
@@ -245,6 +249,13 @@
 }
 
 @media (max-width: 768px) {
+  .case-study-section .relative.z-10.max-w-6xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .case-study-card-layout {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -263,6 +274,10 @@
   .case-study-card-image {
     border-radius: 1.5rem 1.5rem 0 0;
     position: relative;
+  }
+
+  .case-study-section .space-y-20 > * + * {
+    margin-top: 2.5rem;
   }
 }
 

@@ -35,6 +35,10 @@
   transform: translate3d(0, 0, 0.1px);
   position: relative;
   touch-action: none;
+  width: 100%;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pc-behind {
@@ -60,6 +64,7 @@
 .pc-card {
   height: 80svh;
   max-height: 540px;
+  width: 100%;
   display: grid;
   aspect-ratio: 0.718;
   border-radius: var(--card-radius);
@@ -88,6 +93,8 @@
 .pc-card-shell {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
 }
 
 .pc-card * {
@@ -425,9 +432,21 @@
 }
 
 @media (max-width: 768px) {
+  .pc-card-wrapper {
+    max-width: min(340px, calc(100vw - 1rem));
+    width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
   .pc-card {
-    height: 70svh;
-    max-height: 450px;
+    /* Size by width so card fits viewport; height follows aspect-ratio */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 280px;
+    max-height: 70svh;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
   .pc-details {
     top: 2em;
@@ -462,9 +481,13 @@
 }
 
 @media (max-width: 480px) {
+  .pc-card-wrapper {
+    padding: 0 0.25rem;
+  }
   .pc-card {
-    height: 60svh;
-    max-height: 380px;
+    max-width: 280px;
+    min-height: 280px;
+    max-height: 65svh;
   }
   .pc-details {
     top: 1.5em;
@@ -502,8 +525,9 @@
 
 @media (max-width: 320px) {
   .pc-card {
-    height: 55svh;
-    max-height: 320px;
+    max-width: 260px;
+    min-height: 260px;
+    max-height: 55svh;
   }
   .pc-details h3 {
     font-size: min(3svh, 1.5em);

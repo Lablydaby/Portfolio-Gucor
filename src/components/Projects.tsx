@@ -15,6 +15,11 @@ import smImage from '../imgs/sm.png';
 import lechownImage from '../imgs/lechown.png';
 import logoImage from '../imgs/logo.png';
 import rehaulImage from '../imgs/rehaul.png';
+import emailCoverImage from '../imgs/EmailCover.png';
+import email1 from '../imgs/Email1.png';
+import email2 from '../imgs/Email2.png';
+import email3 from '../imgs/Email3.png';
+import email4 from '../imgs/Email4.png';
 
 // Project gallery images
 import blog1 from '../imgs/blog1.png';
@@ -73,6 +78,7 @@ interface Project {
   link: string;
   technologies: string[];
   category: string;
+  subcategory?: string; // e.g. "Email Design" under "Graphic Design"
   featured: boolean;
   role: string;
 }
@@ -225,6 +231,18 @@ const projects: Project[] = [
     featured: false,
     role: 'Logo Designer'
   },
+  {
+    title: 'Email Design',
+    description: 'Marketing and transactional email templates designed for clarity, engagement, and brand consistency.',
+    image: emailCoverImage,
+    gallery: [emailCoverImage, email1, email2, email3, email4],
+    link: 'https://www.figma.com/design/jI1jtf4nMBQNwd6Qj4I07I/Emails?node-id=0-1&t=dhYBIV14zXVcmJ7x-1',
+    technologies: ['HTML', 'CSS', 'Figma'],
+    category: 'Graphic Design',
+    subcategory: 'Email Design',
+    featured: false,
+    role: 'Email Designer'
+  },
 ];
 
 const Projects: React.FC = () => {
@@ -333,7 +351,15 @@ const Projects: React.FC = () => {
                 <div className="card-content">
                   <div className="card-title-container">
                     <h3 className="project-title-text">{project.title}</h3>
-                    <p className="project-category-text">{project.category}</p>
+                    <p className="project-category-text">
+                      {project.category}
+                      {project.subcategory && (
+                        <>
+                          <span className="project-category-sep"> · </span>
+                          <span className="project-subcategory-text">{project.subcategory}</span>
+                        </>
+                      )}
+                    </p>
                   </div>
 
                   <div className="card-hover-content">
@@ -377,7 +403,15 @@ const Projects: React.FC = () => {
 
               <div className="modal-page-container">
                 <div className={`modal-page ${currentPage === 0 ? 'visible' : ''}`}> {/* Frontpage */}
-                  <span className="modal-project-category">{selectedProject.category}</span>
+                  <span className="modal-project-category">
+                    {selectedProject.category}
+                    {selectedProject.subcategory && (
+                      <>
+                        <span className="project-category-sep"> · </span>
+                        <span className="project-subcategory-text">{selectedProject.subcategory}</span>
+                      </>
+                    )}
+                  </span>
                   <h2 className="modal-project-title">{selectedProject.title}</h2>
                   {(selectedProject.link?.trim() && selectedProject.link !== '#' && !/^javascript:/i.test(selectedProject.link)) || selectedProject.title === 'ExerGuide AR' ? (
                   <div style={{ margin: '0 0 0.5rem 0', display: 'flex', gap: '1.2rem', alignItems: 'center' }}>

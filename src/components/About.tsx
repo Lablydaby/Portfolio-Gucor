@@ -58,7 +58,7 @@ const About: React.FC = () => (
       </svg>
     </div>
 
-    <div className="relative z-10 max-w-6xl mx-auto px-6">
+    <div className="relative z-10 max-w-6xl mx-auto px-6 about-inner">
       <div className="flex flex-col items-center mb-20">
         <h2 className="section-title cursor-target" style={{ color: '#fff'}}>
           <strong>
@@ -69,7 +69,7 @@ const About: React.FC = () => (
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4 items-start">
         {/* Left Column - Text Content (from Profile + About) */}
         <div className="space-y-8">
           <div>
@@ -104,7 +104,7 @@ const About: React.FC = () => (
               <a 
                 href="/Resume_Gucor.pdf" 
                 download
-                className="group cursor-target px-8 py-4 border-2 flex items-center justify-center transition-all duration-500"
+                className="group cursor-target px-6 py-3 border-2 inline-flex items-center justify-center transition-all duration-500"
                 style={{
                   backgroundColor: '#FD6F00',
                   color: '#fff',
@@ -113,6 +113,7 @@ const About: React.FC = () => (
                   letterSpacing: '0.05em',
                   fontSize: '1rem',
                   borderRadius: '20px',
+                  width: 'fit-content',
                 }}
               >
                 <span className="font-bold">DOWNLOAD RESUME</span>
