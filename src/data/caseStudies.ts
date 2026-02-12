@@ -34,6 +34,8 @@ export type CaseStudyItem = {
   client: string;
   year: string;
   tagline: string;
+  /** Optional external design link (e.g. Figma) */
+  figmaUrl?: string;
   challenge: string;
   solution: string;
   results: string[];
@@ -57,6 +59,7 @@ export const caseStudiesData: CaseStudyItem[] = [
     client: 'EduTrack',
     year: '2024',
     tagline: 'Redesigning a high-volume admin workflow for speed, clarity, and focus',
+    figmaUrl: 'https://www.figma.com/design/csBhPjIkVmqJgJrBN2RYjW/EduTrack-Pages?node-id=0-1&p=f&t=yQelulaiFUYgd7li-0',
     overview:
       'In EduTrack, school administrators spend most of their day doing one thing: managing student records.\n\nSearching names. Updating information. Checking statuses. Opening profiles. Repeating this flow dozens — sometimes hundreds — of times a day.\n\nThis isn\'t a dashboard or analytics screen.\nIt\'s a **working page** — the operational core of the product.\n\nAnd when a page like this feels cluttered or slow, every task feels heavier than it should.\n\nSo instead of treating it like a visual refresh, I approached it as a **workflow redesign**.',
     challenge:
@@ -205,6 +208,7 @@ export const caseStudiesData: CaseStudyItem[] = [
     client: 'CertiFi',
     year: '2024',
     tagline: 'A clear, credible visual system for accounting and finance professionals',
+    figmaUrl: 'https://www.figma.com/design/3Ba77oCyzxxPpUuWbwCqo0/CertiFi?t=z3XSjIpSKtJjteFe-0',
     overview:
       'CertiFi is a certification platform for accounting and finance professionals, built around **structure, progress, and trust**. However, its original branding did not reflect those qualities. The visuals felt inconsistent and generic, which made the product easy to overlook and difficult to remember.\n\nI approached the project not as a visual refresh, but as a **foundational identity redesign** focused on creating a brand that feels professional, modern, and immediately trustworthy.',
     challenge:

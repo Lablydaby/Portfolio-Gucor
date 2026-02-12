@@ -102,7 +102,7 @@ const CaseStudyDetail: React.FC = () => {
     );
   }
 
-  const { title, client, year, tagline, overview, challenge, solution, results, role, duration, team, tools, process, images, carouselImages, videoUrl } = caseStudy;
+  const { title, client, year, tagline, figmaUrl, overview, challenge, solution, results, role, duration, team, tools, process, images, carouselImages, videoUrl } = caseStudy;
   const useImageGalleryOnly = caseStudy.slug === 'datastructar-ar-learning' || caseStudy.slug === 'certifi-brand-identity';
 
   return (
@@ -129,6 +129,16 @@ const CaseStudyDetail: React.FC = () => {
               pauseOnHover
             />
           </h1>
+          {figmaUrl && (
+            <a
+              href={figmaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="case-study-detail__figma-link cursor-target"
+            >
+              See Figma File
+            </a>
+          )}
           <p className="case-study-detail__client">{client}</p>
           <p className="case-study-detail__tagline">{tagline}</p>
           {(role || duration || team) && (
