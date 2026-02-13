@@ -238,8 +238,7 @@ const projects: Project[] = [
     gallery: [emailCoverImage, email1, email2, email3, email4],
     link: 'https://www.figma.com/design/jI1jtf4nMBQNwd6Qj4I07I/Emails?node-id=0-1&t=dhYBIV14zXVcmJ7x-1',
     technologies: ['HTML', 'CSS', 'Figma'],
-    category: 'Graphic Design',
-    subcategory: 'Email Design',
+    category: 'Email Design',
     featured: false,
     role: 'Email Designer'
   },
@@ -256,7 +255,12 @@ const Projects: React.FC = () => {
   const isAR = selectedProject?.title === 'DatastructAR';
   const totalPages = isAR ? 3 : 2;
 
-  const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
+  // Define category order: Email Design should appear after Web App
+  const categoryOrder = ['Website', 'Mobile App', 'Web App', 'Email Design', 'Graphic Design'];
+  const uniqueCategories = Array.from(new Set(projects.map(p => p.category)));
+  const orderedCategories = categoryOrder.filter(cat => uniqueCategories.includes(cat));
+  const remainingCategories = uniqueCategories.filter(cat => !categoryOrder.includes(cat));
+  const categories = ['All', ...orderedCategories, ...remainingCategories];
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
@@ -417,7 +421,15 @@ const Projects: React.FC = () => {
                   <div style={{ margin: '0 0 0.5rem 0', display: 'flex', gap: '1.2rem', alignItems: 'center' }}>
                     {selectedProject.link?.trim() && selectedProject.link !== '#' && !/^javascript:/i.test(selectedProject.link) && (
                     <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="modal-website-link modal-link-small cursor-target">
-                      <span>{selectedProject.title === 'Uppa' ? 'Visit Design' : selectedProject.title === 'ExerGuide AR' ? 'GitHub Link' : 'Visit Website'}</span>
+                      <span>
+                        {selectedProject.title === 'Uppa' 
+                          ? 'Visit Design' 
+                          : selectedProject.title === 'ExerGuide AR' 
+                          ? 'GitHub Link' 
+                          : selectedProject.category === 'Email Design'
+                          ? 'View Figma link'
+                          : 'Visit Website'}
+                      </span>
                       <svg style={{marginLeft: '0.3em', width: '1.1em', height: '1.1em', verticalAlign: 'middle', opacity: 0.8}} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="2" />
                         <path d="M10 14L20 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
