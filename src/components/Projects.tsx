@@ -209,8 +209,8 @@ const projects: Project[] = [
     role: 'Game Artist'
   },
   {
-    title: 'Web Design Rehauls',
-    description: 'A collection of redesigned web interfaces showcasing improved layouts, refined UI elements, and modern visual compositions. Emphasizes clean aesthetics, intuitive navigation, and engaging user experiences through thoughtful design choices.',
+    title: 'ECommerce',
+    description: 'A collection of eCommerce interfaces showcasing improved layouts, refined UI elements, and modern visual compositions. Emphasizes clean aesthetics, intuitive navigation, and engaging user experiences through thoughtful design choices.',
     image: rehaulImage,
     gallery:[rehaul1,rehaul2,rehaul3,rehaul4,rehaul5,rehaul6],
     link: 'https://www.figma.com/design/K5aNXcvJPGioPhVx46r6Ul/KA-CHAVA?node-id=0-1&p=f&t=SyLugCxEeqg3dLov-0',
